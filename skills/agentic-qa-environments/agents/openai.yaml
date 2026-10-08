@@ -1,0 +1,3 @@
+interface:
+  display_name: "Agentic QA Environments"
+  short_description: "Prepare and verify isolated full-stack QA environments"

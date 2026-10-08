@@ -1,0 +1,32 @@
+{
+  "example_only": true,
+  "schema_version": 1,
+  "application": "Fictional Notes",
+  "execution": {
+    "requested_location": "cloud",
+    "application_location": "cloud",
+    "database_location": "cloud",
+    "browser_location": "cloud",
+    "controller_location": "cloud"
+  },
+  "identity": {
+    "source_commit": null,
+    "working_tree_digest": null,
+    "lockfile_sha256": null,
+    "migration_digest": null,
+    "recipe_digest": null,
+    "runtime_id": "synthetic-run-alpha"
+  },
+  "dependencies": [
+    {"name": "application", "version": null, "ownership": "owned", "readiness": "fresh runtime identity and expected route"},
+    {"name": "database", "image_digest": null, "ownership": "owned", "state_namespace": "synthetic-notes-alpha"},
+    {"name": "browser", "version": null, "ownership": "owned", "sandbox_required": true}
+  ],
+  "seed": {"kind": "synthetic", "version": "notes-example-v1", "users": 1, "notes_before": 0},
+  "network": {"application_bind": "loopback", "external_providers": "disabled", "effective_destinations_verified": false},
+  "auth": {"mechanism": "disposable local test identity", "secret_storage": "private runtime directory", "connector_access": "not implied"},
+  "resources": {"disk_reserve_bytes": null, "memory_limit_bytes": null, "duration_limit_seconds": null},
+  "acceptance": ["save through UI", "fresh API and independent database agreement", "reload and reopen", "owned process interruption and recovery", "readable recording"],
+  "external_actions": {"paid_calls_authorized": false, "deployment_authorized": false},
+  "cleanup": {"delete_only_owned_fixture": true, "preserve_diagnostic_artifacts": true}
+}

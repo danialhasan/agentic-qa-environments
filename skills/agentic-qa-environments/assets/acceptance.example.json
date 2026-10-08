@@ -1,0 +1,29 @@
+{
+  "example_only": true,
+  "schema_version": 1,
+  "notice": "Fictional outcomes and artifact paths demonstrate a partial receipt. No run is claimed.",
+  "run_id": "synthetic-run-alpha",
+  "execution_location": "cloud",
+  "source_commit": null,
+  "runtime_before": "synthetic-runtime-alpha",
+  "runtime_after": "synthetic-runtime-beta",
+  "overall": "partial",
+  "checks": [
+    {"name": "UI save, reload, and reopen", "status": "passed", "evidence": ["ui-observations", "api-observation", "database-observation"]},
+    {"name": "independent persisted value", "status": "passed", "evidence": ["database-observation"], "expected": {"fixture": "example-note-one", "body": "A synthetic note"}, "before_count": 0, "after_count": 1},
+    {"name": "interruption and fresh runtime recovery", "status": "passed", "evidence": ["recovery-observation"]},
+    {"name": "readable recording", "status": "blocked", "evidence": [], "reason": "Delivered video has not been opened and inspected"},
+    {"name": "capture cadence", "status": "not_tested", "evidence": [], "reason": "Only encoder metadata was retained"},
+    {"name": "remote provider execution", "status": "not_tested", "evidence": [], "reason": "Outside this run's scope"},
+    {"name": "human acceptance", "status": "not_tested", "evidence": [], "reason": "No reviewer response"}
+  ],
+  "artifacts": [
+    {"id": "ui-observations", "path": "example-artifacts/ui.json", "sha256": null},
+    {"id": "api-observation", "path": "example-artifacts/api.json", "sha256": null},
+    {"id": "database-observation", "path": "example-artifacts/database.json", "sha256": null},
+    {"id": "recovery-observation", "path": "example-artifacts/recovery.json", "sha256": null}
+  ],
+  "cleanup": {"status": "passed", "owned_fixture_rows_remaining": 0, "owned_live_processes_remaining": 0, "shared_service_identity_preserved": true, "diagnostics_retained": true},
+  "limitations": ["All values are invented for this example", "No resource, billing, or 60 fps claim is supported"],
+  "next_action": "Retrieve, hash-check, and inspect the recording before deciding the recording requirement"
+}
